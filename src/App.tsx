@@ -10,6 +10,7 @@ export default function App() {
 
   return (
     <>
+      {/* ✅ Preloader shows first */}
       {!loaded && (
         <Preloader
           brand={BRAND}
@@ -19,8 +20,10 @@ export default function App() {
         />
       )}
 
+      {/* ✅ Navbar appears ONLY after preloader */}
       <Navbar brand={BRAND} visible={loaded} />
 
+      {/* ✅ Main content */}
       <div className={`app ${loaded ? "app--loaded" : "app--hidden"}`}>
         <SectionHero brand={BRAND} />
       </div>
